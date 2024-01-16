@@ -7,8 +7,8 @@ import {
   UsePipes,
 } from '@nestjs/common'
 import { hash } from 'bcryptjs'
-import { ZodValidation } from 'src/pipes/zod-validation-pipe'
-import { PrismaService } from 'src/prisma/prisma.service'
+import { ZodValidation } from '@/pipes/zod-validation-pipe'
+import { PrismaService } from '@/prisma/prisma.service'
 
 import { z } from 'zod'
 
