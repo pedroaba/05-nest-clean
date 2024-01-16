@@ -13,8 +13,6 @@
     ],
     "no-new": "off",
     "camelcase": "off",
-    "no-useless-constructor": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "no-useless-constructor": "off"
   }
 }
