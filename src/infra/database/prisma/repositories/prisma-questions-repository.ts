@@ -52,14 +52,31 @@ export class PrismaQuestionRepository implements QuestionsRepository {
   }
 
   async create(question: Question) {
-    throw new Error('Method not implemented.')
+    const data = PrismaQuestionMapper.toPrisma(question)
+
+    await this.prisma.question.create({
+      data,
+    })
   }
 
   async delete(question: Question) {
-    throw new Error('Method not implemented.')
+    const data = PrismaQuestionMapper.toPrisma(question)
+
+    await this.prisma.question.delete({
+      where: {
+        id: data.id,
+      },
+    })
   }
 
   async save(question: Question) {
-    throw new Error('Method not implemented.')
+    const data = PrismaQuestionMapper.toPrisma(question)
+
+    await this.prisma.question.update({
+      where: {
+        id: data.id,
+      },
+      data,
+    })
   }
 }
