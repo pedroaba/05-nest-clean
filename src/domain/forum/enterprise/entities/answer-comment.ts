@@ -7,7 +7,7 @@ export interface AnswerCommentProps {
   answerId: UniqueEntityID
   content: string
   createdAt: Date
-  updatedAt?: Date
+  updatedAt?: Date | null
 }
 
 export class AnswerComment extends Entity<AnswerCommentProps> {
@@ -32,7 +32,7 @@ export class AnswerComment extends Entity<AnswerCommentProps> {
     return this.props.createdAt
   }
 
-  get updatedAt(): Date | undefined {
+  get updatedAt(): Date | undefined | null {
     return this.props.updatedAt
   }
 
