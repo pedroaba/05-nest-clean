@@ -7,15 +7,15 @@ import { PrismaService } from '../prisma.service'
 export class PrismaNotificationRepository implements NotificationsRepository {
   constructor(private prisma: PrismaService) {}
 
-  findById(id: string): Promise<Notification | null> {
+  findById(_id: string): Promise<Notification | null> {
     throw new Error('Method not implemented.')
   }
 
-  create(notification: Notification): Promise<void> {
+  create(_notification: Notification): Promise<void> {
     throw new Error('Method not implemented.')
   }
 
-  save(notification: Notification): Promise<void> {
+  save(_notification: Notification): Promise<void> {
     throw new Error('Method not implemented.')
   }
 }
