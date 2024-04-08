@@ -13,6 +13,8 @@ services:
       PGDATA: /data/postgres
     volumes:
       - ./data/pg:/data/postgres
+    networks:
+      - db
   
   cache:
     container_name: nest-clean-cache
@@ -21,3 +23,25 @@ services:
       - 6379:6379
     volumes:
       - ./data/redis:/data
+    networks:
+      - cache
+
+  app:
+    container_name: app
+    build: .
+    ports:
+      - 3001:3333
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - cache
+    networks:
+      - db
+      - cache
+
+networks:
+  cache:
+    driver: bridge
+  db:
+    driver: bridge

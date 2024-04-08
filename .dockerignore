@@ -1,0 +1,6 @@
+node_modules
+Dockerfile
+data
+dist
+.env
+client.http
